@@ -11,17 +11,13 @@
         <h1>Juego Piedra, Papel, Tijeras, Lagarto, Spock</h1>   
     </header>
 
-<!--Menú de Navegación con opciones -->
-    <nav>
-        <input id="nombre" type="text" name="nombre" placeholder="Introduce tu nombre" required/>
-        <br><br>
-		<button type="button" id="button" disabled="true">Aceptar</button>   
-    </nav>
+<!--Introcudir el nombre del jugador -->
  
-    
- <!-- Secciones -->
     <div class="cuerpo"></div>       
         <aside>
+            <input id="nombre" type="text" name="nombre" placeholder="Introduce tu nombre" required/>
+            <br><br>
+		    <button type="button" id="button" disabled="true">Aceptar</button>
             <h1>Nombre: </h1>
         </aside>
 
@@ -33,7 +29,7 @@
                     <h1>Puntuacion 0/0 </h1>
                         
                 </header>
-
+                <!--Tabla con los iconos de las opciones y les doy una equivalencia numerica para luego usar una matriz con esos valores -->
                 <article>
                     <table id="tabla">
                         <tr>
