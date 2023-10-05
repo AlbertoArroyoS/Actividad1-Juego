@@ -1,0 +1,22 @@
+html{
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(159, 248, 248);
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+/* Eliminar el subrayado de los enlaces */
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+/*Tamaño de los iconos y posicionamiento */
+#tabla-completa img{
+
+    height: 100px;
+    width: 100px;
+    float: left;
+     
+}
