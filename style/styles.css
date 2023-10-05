@@ -12,6 +12,13 @@ a:link, a:visited, a:active {
     text-decoration:none;
 }
 
+table{
+    margin-left: 1%;
+    margin-right: 5%;
+    height: 100%;
+    width: 100%;
+}
+
 /*Tamaño de los iconos y posicionamiento */
 #tabla-completa img{
 
@@ -19,4 +26,19 @@ a:link, a:visited, a:active {
     width: 100px;
     float: left;
      
+}
+/*Tamaño del vs */
+#vs img{
+    height: 200px;
+    width: 200px;
+
+
+}
+
+#resultado {
+    text-align: left;
+}
+
+#resultado-frase {
+    text-align: left;
 }
