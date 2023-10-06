@@ -18,7 +18,8 @@ let resultadoBoton;
 
 let matrizResultados;
 let fraseResultados;
-let aleatorioMaquina;
+let resultadoMaquina;
+let resultadoP1VsP2;
 
 function initVariables(){
     nameBox = document.getElementById("nombre");
@@ -42,8 +43,9 @@ function initVariables(){
 					["Piedra rompe tijeras","Tijeras cortan papel","Empate","Tijeras decapitan lagarto","Spock rompe tijeras"],
 					["Piedra aplasta lagarto","Lagarto devora papel","Tijeras decapitan lagarto","Empate","Lagarto envenena a Spock"],
 					["Spock vaporiza piedra","Papel desautoriza a Spock","Spock rompe tijeras","Lagarto envenena a Spock","Empate"]
-					];				
-	aleatorioMaquina= Math.floor(Math.random()*5);
+					];
+
+	
 
 	botonpiedra= document.getElementById("btnpiedra");
 	botonpapel= document.getElementById("btnpapel");
@@ -93,10 +95,29 @@ function eligio_spock(){
 
 function resultadoPartida(numeroOpcion) {
 	//console.log(numeroOpcion);
-
-
 	
+	resultadoMaquina= Math.floor(Math.random()*5);
+	console.log(resultadoMaquina);
+	//Paso a la matriz el numero que juega aleatorio el ordenador, y el valor del boton pulsado
+	resultadoP1VsP2 = matrizResultados[resultadoMaquina][numeroOpcion];
 
+	console.log('Quien gana: '+ resultadoP1VsP2);
+	//muesto la frase resultante:
+	let fraseFinal = fraseResultados[resultadoMaquina][numeroOpcion];
+	console.log(fraseFinal);
+
+
+	//Sumo los contadores de partidas jugadas, ganadas y perdidas
+	switch(resultado){
+		case 0: /* No se hace nada */ 
+		break; 
+		case 1: 
+			puntosJ++; 
+		break; // El jugador gana puntos
+		case 2: 
+			puntosM++; 
+			break; // La máquina gana puntos
+	}
 }
 
 //añadir imagen grande a boton seleccionado
