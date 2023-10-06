@@ -77,7 +77,10 @@ function initVariables(){
 
 	//
 	document.getElementById('resultado').textContent='Empieza a jugar';
+	document.getElementById('resultado').style='font-size:30px'
 	document.getElementById('resultado-frase').textContent='';
+	document.getElementById('resultado-frase').style='font-size:20px'
+
 }
 
 //funcion valor imagen pulsada
@@ -127,6 +130,7 @@ function resultadoPartida(numeroOpcion) {
 	//console.log(numeroOpcion);
 	contadorPartidas++;
 	resultadoMaquina= Math.floor(Math.random()*5);
+	addImgP2(resultadoMaquina);
 	let opcionMaquina=pasarNumeroAOpcion(resultadoMaquina);
 	console.log('Opcion maquina '+ resultadoMaquina + ': ' + opcionMaquina);
 
@@ -145,22 +149,7 @@ function resultadoPartida(numeroOpcion) {
 	//Pruebas consola
 	console.log('Quien gana: '+ resultadoP1VsP2);
 	console.log(resultadoEscrito);
-/*
-	switch(resultadoP1VsP2){
-		case 0: //Si hay empate
-			contadorEmpates++;
-			resultadoEscrito= 'Empate';
-			break; 
-		case 1: //Si gana el jugador
-			contadorGanadas++; 
-			resultadoEscrito= 'Has ganado';
-			break; 
-		case 2: //Si gana la maquina
-			contadorPerdidas++;
-			resultadoEscrito= 'Has perdido';
-			break;		 
-	}
-	*/
+
 	// Comprobacion por consola de los contadores
 	console.log('Partidas jugadas: ' + contadorPartidas);
 	console.log('Partidas ganadas: ' + contadorGanadas);
@@ -175,15 +164,16 @@ function ganador(numero){
 	switch(resultadoP1VsP2){
 		case 0: //Si hay empate
 			contadorEmpates++;
-			resultadoEscrito= 'Empate';
+			resultadoEscrito= '';
+			document.getElementById('resultado-frase').style='font-size:30px'
 			break; 
 		case 1: //Si gana el jugador
 			contadorGanadas++; 
-			resultadoEscrito= 'Has ganado';
+			resultadoEscrito= 'Has ganado: ';
 			break; 
 		case 2: //Si gana la maquina
 			contadorPerdidas++;
-			resultadoEscrito= 'Has perdido';
+			resultadoEscrito= 'Has perdido: ';
 			break;		 
 	}
 	return resultadoEscrito;
@@ -236,9 +226,31 @@ function addImgP1 (valor){
 			document.getElementById("p1").src="/icon/spock.png";
 			break;
 	}
-
 }
 
+function addImgP2 (valor){
+	let miJugada;
+	let imagen = document.createElement("img");
+
+	switch (valor){
+		case 0:
+			document.getElementById("p2").src="/icon/rock.png";
+			break;
+		case 1:
+			document.getElementById("p2").src="/icon/paper.png";
+			break;
+		case 2:
+			document.getElementById("p2").src="/icon/scissors.png";
+			break;
+		case 3:
+			document.getElementById("p2").src="/icon/lizard.png";
+			break;
+		case 4:
+			document.getElementById("p2").src="/icon/spock.png";
+			break;
+	}
+
+}
 //uso de las variables
 
 window.addEventListener("load",()=>{
