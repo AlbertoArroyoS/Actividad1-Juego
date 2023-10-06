@@ -25,8 +25,13 @@ let contadorPartidas;
 let contadorGanadas;
 let contadorPerdidas;
 let contadorEmpates;
-
+//marcadores
 let puntuacion;
+let resumenJugadas;
+let resumenGanadas;
+let resumenEmpatadas;
+let resumenPerdidas;
+
 
 //inicialización de las variables
 function initVariables(){
@@ -262,8 +267,8 @@ function addImgP2 (valor){
 function resumenResultados(){
 
 	puntuacion= "Puntuacion " + contadorGanadas + "/" + contadorPerdidas;
-
 	document.getElementById("puntuacion").textContent= puntuacion;
+
 }
 
 
