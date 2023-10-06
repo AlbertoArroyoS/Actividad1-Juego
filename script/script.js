@@ -134,13 +134,13 @@ function resultadoPartida(numeroOpcion) {
 	//añadir la imagen que corresponde a numeroOpcion del parametro
 	addImgP1(numeroOpcion);
 	
-	
 	//console.log(numeroOpcion);
 	contadorPartidas++;
 	resultadoMaquina= Math.floor(Math.random()*5);
 	//añadir la imagen que corresponde al numero aleatorio del parametro
 	addImgP2(resultadoMaquina);
-	let opcionMaquina=pasarNumeroAOpcion(resultadoMaquina);
+	
+	opcionMaquina=pasarNumeroAOpcion(resultadoMaquina);
 	console.log('Opcion maquina '+ resultadoMaquina + ': ' + opcionMaquina);
 
 	//Paso a la matriz el numero que juega aleatorio el ordenador, y el valor del boton pulsado
@@ -239,26 +239,37 @@ function addImgP1 (valor){
 			break;
 	}
 }
-//añadir imagen grande a boton seleccionado ordenador aleatorio
+//añadir imagen grande a boton seleccionado ordenador aleatorio, añado que se ponga el fondo de pantalla a la img pequeña
 function addImgP2 (valor){
 	let miJugada;
 	let imagen = document.createElement("img");
+	resetFondoPc();
 
 	switch (valor){
 		case 0:
 			document.getElementById("p2").src="/icon/rock.png";
+			document.getElementById("pcpiedra").style.backgroundColor = "rgb(41, 42, 42, 5)";
+			document.getElementById("pcpiedra").style.borderRadius = "10%";
 			break;
 		case 1:
 			document.getElementById("p2").src="/icon/paper.png";
+			document.getElementById("pcpapel").style.backgroundColor = "rgb(41, 42, 42, 5)";
+			document.getElementById("pcpapel").style.borderRadius = "10%";
 			break;
 		case 2:
 			document.getElementById("p2").src="/icon/scissors.png";
+			document.getElementById("pctijeras").style.backgroundColor = "rgb(41, 42, 42, 5)";
+			document.getElementById("pctijeras").style.borderRadius = "10%";
 			break;
 		case 3:
 			document.getElementById("p2").src="/icon/lizard.png";
+			document.getElementById("pclagarto").style.backgroundColor = "rgb(41, 42, 42, 5)";
+			document.getElementById("pclagarto").style.borderRadius = "10%";
 			break;
 		case 4:
 			document.getElementById("p2").src="/icon/spock.png";
+			document.getElementById("pcspock").style.backgroundColor = "rgb(41, 42, 42, 5)";
+			document.getElementById("pcspock").style.borderRadius = "10%";
 			break;
 	}
 
@@ -270,7 +281,17 @@ function resumenResultados(){
 	document.getElementById("puntuacion").textContent= puntuacion;
 
 }
+//funcion para resetear fondo de pantalla antes de cada partida
 
+function resetFondoPc(){
+	
+			document.getElementById("pcpiedra").style.backgroundColor = "rgb(159, 248, 248)";
+			document.getElementById("pcpapel").style.backgroundColor = "rgb(159, 248, 248)";
+			document.getElementById("pctijeras").style.backgroundColor = "rgb(159, 248, 248)";
+			document.getElementById("pclagarto").style.backgroundColor = "rgb(159, 248, 248)";
+			document.getElementById("pcspock").style.backgroundColor = "rgb(159, 248, 248)";
+
+}
 
 //uso de las variables
 
