@@ -26,6 +26,8 @@ let contadorGanadas;
 let contadorPerdidas;
 let contadorEmpates;
 
+let puntuacion;
+
 //inicialización de las variables
 function initVariables(){
     nameBox = document.getElementById("nombre");
@@ -78,7 +80,7 @@ function initVariables(){
 	document.getElementById('resultado').style='font-size:30px'
 	document.getElementById('resultado-frase').textContent='INDRODUZCA SU NOMBRE';
 	document.getElementById('resultado-frase').style='font-size:30px'
-	
+
 	//Quito el borde rojo que he usado en css para guiarme
 	document.getElementById('tabla-completa').id="sin-borde";
 
@@ -131,6 +133,7 @@ function resultadoPartida(numeroOpcion) {
 	//console.log(numeroOpcion);
 	contadorPartidas++;
 	resultadoMaquina= Math.floor(Math.random()*5);
+	//añadir la imagen que corresponde al numero aleatorio del parametro
 	addImgP2(resultadoMaquina);
 	let opcionMaquina=pasarNumeroAOpcion(resultadoMaquina);
 	console.log('Opcion maquina '+ resultadoMaquina + ': ' + opcionMaquina);
@@ -156,6 +159,9 @@ function resultadoPartida(numeroOpcion) {
 	console.log('Partidas ganadas: ' + contadorGanadas);
 	console.log('Partidas empatadas: '+ contadorEmpates);
 	console.log('Partidas perdidas: ' + contadorPerdidas);
+
+	resumenResultados();
+	
 	
 }
 
@@ -205,7 +211,7 @@ function pasarNumeroAOpcion(numero){
 	return opcion;
 }
 
-//añadir imagen grande a boton seleccionado
+//añadir imagen grande a boton seleccionado jugador
 function addImgP1 (valor){
 	let miJugada;
 	let imagen = document.createElement("img");
@@ -228,7 +234,7 @@ function addImgP1 (valor){
 			break;
 	}
 }
-
+//añadir imagen grande a boton seleccionado ordenador aleatorio
 function addImgP2 (valor){
 	let miJugada;
 	let imagen = document.createElement("img");
@@ -252,6 +258,15 @@ function addImgP2 (valor){
 	}
 
 }
+//resumen
+function resumenResultados(){
+
+	puntuacion= "Puntuacion " + contadorGanadas + "/" + contadorPerdidas;
+
+	document.getElementById("puntuacion").textContent= puntuacion;
+}
+
+
 //uso de las variables
 
 window.addEventListener("load",()=>{
