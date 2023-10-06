@@ -21,6 +21,12 @@ let fraseResultados;
 let resultadoMaquina;
 let resultadoP1VsP2;
 
+//contadores
+let contadorPartidas;
+let contadorGanadas;
+let contadorPerdidas;
+let contadorEmpates;
+
 function initVariables(){
     nameBox = document.getElementById("nombre");
     button = document.getElementById("button");
@@ -53,7 +59,10 @@ function initVariables(){
 	botonlagarto= document.getElementById("btnlagarto");
 	botonspock= document.getElementById("btnspock");
 
-	
+	contadorPartidas=0;
+	contadorGanadas=0;
+	contadorEmpates=0;
+	contadorPerdidas=0;
 }
 
 //funcion valor imagen pulsada
@@ -94,8 +103,13 @@ function eligio_spock(){
 }
 
 function resultadoPartida(numeroOpcion) {
-	//console.log(numeroOpcion);
 	
+	//añadir la imagen que corresponde a numeroOpcion del parametro
+	addImg(numeroOpcion);
+	
+	
+	//console.log(numeroOpcion);
+	contadorPartidas++;
 	resultadoMaquina= Math.floor(Math.random()*5);
 	console.log(resultadoMaquina);
 	//Paso a la matriz el numero que juega aleatorio el ordenador, y el valor del boton pulsado
@@ -108,16 +122,23 @@ function resultadoPartida(numeroOpcion) {
 
 
 	//Sumo los contadores de partidas jugadas, ganadas y perdidas
-	switch(resultado){
-		case 0: /* No se hace nada */ 
-		break; 
-		case 1: 
-			puntosJ++; 
-		break; // El jugador gana puntos
-		case 2: 
-			puntosM++; 
-			break; // La máquina gana puntos
+	switch(resultadoP1VsP2){
+		case 0: //Si hay empate
+			contadorEmpates++;
+			break; 
+		case 1: //Si gana el jugador
+			contadorGanadas++; 
+			break; 
+		case 2: //Si gana la maquina
+			contadorPerdidas++; 
+			break; 
 	}
+	// Comprobacion por consola de los contadores
+	console.log('Partidas jugadas: ' + contadorPartidas);
+	console.log('Partidas ganadas: ' + contadorGanadas);
+	console.log('Partidas empatadas: '+ contadorEmpates);
+	console.log('Partidas perdidas: ' + contadorPerdidas);
+	
 }
 
 //añadir imagen grande a boton seleccionado
