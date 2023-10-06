@@ -41,7 +41,7 @@ table{
 }
 /*Tamaño del vs */
 #vs { 
-    margin-top: 100px;
+    margin-top: 1px;
 }
 
 .jugador1 :hover{
@@ -51,11 +51,11 @@ table{
 }
 
 #resultado {
-    text-align: left;
+    text-align: center;
 }
 
 #resultado-frase {
-    text-align: left;
+    text-align: center;
 }
 
 .btn {
@@ -72,3 +72,17 @@ table{
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 15%;
 }
+
+/* PRUEBAS TABLAS */
+table {
+    border: red 5px solid;
+  }
+  tr {
+    border: green 5px solid;
+  }
+  td {
+    border: orange 5px solid;
+    
+  }
+
+  /* FIN PRUEBAS TABLAS */
