@@ -285,11 +285,11 @@ function resumenResultados(){
 
 function resetFondoPc(){
 	
-			document.getElementById("pcpiedra").style.backgroundColor = "rgb(159, 248, 248)";
-			document.getElementById("pcpapel").style.backgroundColor = "rgb(159, 248, 248)";
-			document.getElementById("pctijeras").style.backgroundColor = "rgb(159, 248, 248)";
-			document.getElementById("pclagarto").style.backgroundColor = "rgb(159, 248, 248)";
-			document.getElementById("pcspock").style.backgroundColor = "rgb(159, 248, 248)";
+			document.getElementById("pcpiedra").style.backgroundColor = "transparent";
+			document.getElementById("pcpapel").style.backgroundColor = "transparent";
+			document.getElementById("pctijeras").style.backgroundColor = "transparent";
+			document.getElementById("pclagarto").style.backgroundColor = "transparent";
+			document.getElementById("pcspock").style.backgroundColor = "transparent";
 
 }
 
