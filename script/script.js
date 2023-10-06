@@ -5,7 +5,7 @@ let optionSelected;
 let caja2;
 let player1;
 let imagePulse;
-//inicialización de las variables
+
 // console.log("Valor de la imagen: " + valor);
 let botonJugada;
 
@@ -27,15 +27,23 @@ let contadorGanadas;
 let contadorPerdidas;
 let contadorEmpates;
 
+//inicialización de las variables
 function initVariables(){
     nameBox = document.getElementById("nombre");
     button = document.getElementById("button");
     nameBox.focus();
-	//player1.document.getElementsByName("jugador1")
-	// Obtén una NodeList de todas las imágenes con la clase "imagen"
-	//imagePulse = document.querySelectorAll(".img-pulsada");
-	//botonJugada = document.getElementById("btnpiedra").value;
 	//console.log();
+	/* Matriz con opciones por posicion
+			
+	      			  /0 piedra/1 papel/2 tijera/3 lagarto/4 spock
+			/0/piedra/
+			/1 papel/
+			/2 tijera/
+			/3 lagarto/
+			/4 spock/
+
+		Resultado= 0 empate, 1 gana p1, 2 gana ordenador
+	*/
 	matrizResultados=[
 					[0,1,2,2,1],
 					[2,0,1,1,2],
@@ -43,6 +51,7 @@ function initVariables(){
 					[1,2,1,0,2],
 					[2,1,2,1,0]
 					];
+	// Por cada posicion de la matriz anterior tiene una frase 
 	fraseResultados = [
 					["Empate","Papel tapa piedra","Piedra rompe tijeras","Piedra aplasta lagarto","Spock vaporiza piedra"],
 					["Papel tapa piedra","Empate","tijeras cortan papel","lagarto devora papel","Papel desautoriza a Spock"],
@@ -52,13 +61,14 @@ function initVariables(){
 					];
 
 	
-
+	//Variables	a las que van a apuntar los listeners			
 	botonpiedra= document.getElementById("btnpiedra");
 	botonpapel= document.getElementById("btnpapel");
 	botontijera= document.getElementById("btntijera");
 	botonlagarto= document.getElementById("btnlagarto");
 	botonspock= document.getElementById("btnspock");
 
+	//variables contador				
 	contadorPartidas=0;
 	contadorGanadas=0;
 	contadorEmpates=0;
@@ -69,6 +79,7 @@ function initVariables(){
 
 function empezarPartida(){
 	
+	//listeners
 	botonpiedra.addEventListener("click",eligio_piedra);
 	botonpapel.addEventListener("click",eligio_papel);
 	botontijera.addEventListener("click",eligio_tijeras);
@@ -105,13 +116,15 @@ function eligio_spock(){
 function resultadoPartida(numeroOpcion) {
 	
 	//añadir la imagen que corresponde a numeroOpcion del parametro
-	addImg(numeroOpcion);
+	addImgP1(numeroOpcion);
 	
 	
 	//console.log(numeroOpcion);
 	contadorPartidas++;
 	resultadoMaquina= Math.floor(Math.random()*5);
-	console.log(resultadoMaquina);
+	let opcionMaquina=pasarNumeroAOpcion(resultadoMaquina);
+	console.log('Opcion maquina '+ resultadoMaquina + ': ' + opcionMaquina);
+
 	//Paso a la matriz el numero que juega aleatorio el ordenador, y el valor del boton pulsado
 	resultadoP1VsP2 = matrizResultados[resultadoMaquina][numeroOpcion];
 
@@ -131,7 +144,7 @@ function resultadoPartida(numeroOpcion) {
 			break; 
 		case 2: //Si gana la maquina
 			contadorPerdidas++; 
-			break; 
+			break;		 
 	}
 	// Comprobacion por consola de los contadores
 	console.log('Partidas jugadas: ' + contadorPartidas);
@@ -141,38 +154,73 @@ function resultadoPartida(numeroOpcion) {
 	
 }
 
+//Para mostrar en consola la opcion con palabras a la que corresponde el numero
+function pasarNumeroAOpcion(numero){
+	let opcion;
+
+	switch(numero){
+		case 0: 
+			opcion='Piedra';
+			break; 
+		case 1: 
+			opcion='Papel'; 
+			break; 
+		case 2: 
+			opcion='Tijera';
+			break; 
+		case 3: 
+			opcion='Lagarto';
+			break; 
+		case 4: 
+			opcion='Spock';
+			break; 
+	}
+	return opcion;
+}
+
+function ganador (numero){
+	let opcion;
+
+	switch(numero){
+		case 0: //Si hay empate
+			opcion='Piedra';
+			break; 
+		case 1: //Si gana el jugador
+			opcion='Papel'; 
+			break; 
+		case 2: //Si gana la maquina
+			opcion='Tijera';
+			break; 
+		case 3: //Si gana la maquina
+			opcion='Lagarto';
+			break; 
+		case 4: //Si gana la maquina
+			opcion='Spock';
+			break; 
+	}
+	return opcion;
+}
+
 //añadir imagen grande a boton seleccionado
-function addImg (valor){
+function addImgP1 (valor){
 	let miJugada;
 	let imagen = document.createElement("img");
 
 	switch (valor){
 		case 0:
-			imagen.src = "/icon/rock.png";
-			miJugada = document.getElementById("mi-jugada");
-			miJugada.appendChild(imagen);
+			document.getElementById("p1").src="/icon/rock.png";
 			break;
-
 		case 1:
-			imagen.src = "/icon/paper.png";
-			miJugada = document.getElementById("mi-jugada");
-			miJugada.appendChild(imagen);
+			document.getElementById("p1").src="/icon/paper.png";
 			break;
-
 		case 2:
-			imagen.src = "/icon/scissors.png";
-			miJugada = document.getElementById("mi-jugada");
-			miJugada.appendChild(imagen);
+			document.getElementById("p1").src="/icon/scissors.png";
 			break;
 		case 3:
-			imagen.src = "/icon/lizard.png";
-			miJugada = document.getElementById("mi-jugada");
-			miJugada.appendChild(imagen);
+			document.getElementById("p1").src="/icon/lizard.png";
 			break;
 		case 4:
-			imagen.src = "/icon/spock.png";
-			miJugada = document.getElementById("mi-jugada");
-			miJugada.appendChild(imagen);
+			document.getElementById("p1").src="/icon/spock.png";
 			break;
 	}
 
