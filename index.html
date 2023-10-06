@@ -34,35 +34,35 @@
                 <article>
                     <table id="tabla-completa">
                         <tr>
-                            <th>Opciones Persona</th>
-                            <th>Jugada seleccionada</th> 
+                            <th>Opciones P1</th>
+                            <th>Player1</th> 
                             <th>VS</th>
-                            <th>Jugada IA</th>
-                            <th>Opciones IA</th>    
+                            <th>PC</th>
+                            <th>Opciones Pc</th>    
                         </tr>
                         <tr>
-                            <td><button id="btnpiedra" class="btn" type="button" value="0"><img src="icon/rock.png"/></button></td>
-                            <td rowspan="4" class="p1-vs-p2"><img id="p1" src="icon/p1.png"/></td>
-                            <td rowspan="4"><img id="vs" src="icon/vs.png"/></td>
-                            <td rowspan="4" ><img id="p2" src="icon/pc.png"/></td>
-                            <td><img src="icon/rock.png"/></td>
+                            <td><button id="btnpiedra" class="btn" type="button" value="0"><img class="mediana" src="icon/rock.png"/></button></td>
+                            <td rowspan="4" class="p1-vs-p2"><img id="p1" class="grande" src="icon/p1.png"/></td>
+                            <td rowspan="4"><img id="vs" class="grande" src="icon/vs.png"/></td>
+                            <td rowspan="4" ><img id="p2" class="grande" src="icon/pc.png"/></td>
+                            <td><img class="mediana" src="icon/rock.png"/></td>
                             
                         </tr>
                         <tr>
-                            <td><button id="btnpapel" class="btn" type="button" value="1"><img src="icon/paper.png"/></button></td>
-                            <td><img src="icon/paper.png"/></td>
+                            <td><button id="btnpapel" class="btn" type="button" value="1"><img class="mediana" src="icon/paper.png"/></button></td>
+                            <td><img class="mediana" src="icon/paper.png"/></td>
                               
                         </tr>
                         <tr>
-                            <td><button id="btntijera" class="btn" type="button" value="2"><img src="icon/scissors.png"/></button></td>
-                            <td><img src="icon/scissors.png"/></td>
+                            <td><button id="btntijera" class="btn" type="button" value="2"><img class="mediana" src="icon/scissors.png"/></button></td>
+                            <td><img class="mediana" src="icon/scissors.png"/></td>
                         </tr>
                         <tr>
-                            <td><button id="btnlagarto" class="btn" type="button" value="3"><img src="icon/lizard.png"/></button></td>
-                            <td><img src="icon/lizard.png"/></td>
+                            <td><button id="btnlagarto" class="btn" type="button" value="3"><img class="mediana" src="icon/lizard.png"/></button></td>
+                            <td><img class="mediana" src="icon/lizard.png"/></td>
                         </tr>
                         <tr>
-                            <td> <button id="btnspock" class="btn" type="button" value="3"><img src="icon/spock.png"/></button></td>
+                            <td> <button id="btnspock" class="btn" type="button" value="3"><img class="mediana" src="icon/spock.png"/></button></td>
                             <td colspan="3" >
                                 <div id="resultado">
                                     <h1>Ganaste</h1>
@@ -75,16 +75,20 @@
 
 
                             </td>
-                            <td><img src="icon/spock.png"/></td>
+                            <td><img class="mediana" src="icon/spock.png"/></td>
                         </tr>
                     </table>
                         
                 </article>
 
                 <footer>
-                    <h1>Numero de partidas Jugadas: </h1>
-                    <h1>Numero de partidas ganadas: </h1>
-                    <h1>Numero de partidas perdidas: </h1>
+                </br>
+                    <h1>Resumen partidas</h3>
+                    <h3 id="partidas-jugadas">Numero de partidas Jugadas: </h1>
+                    <h3 id="partidas-ganadas">Numero de partidas ganadas: </h1>
+                    <h3 id="partidas-jugadas">Numero de partidas perdidas: </h1>
+                    <h3 id="partidas-jugadas">Numero de partidas perdidas: </h1>
+                    </br>
                 </footer>
             </section>        
         </main>

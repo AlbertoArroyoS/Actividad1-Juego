@@ -19,13 +19,18 @@ table{
     width: 100%;
 }
 
-/*Tamaño de los iconos y posicionamiento */
-#tabla-completa img{
 
-    height: 100px;
-    width: 100px;
-    float: left;
-     
+/* Borde tablas para saber tamaño */
+
+#tabla-completa td{
+    border: red 5px solid;
+    text-align: center;
+}
+
+#sin-borde td {
+    border: 0; 
+    border-bottom:1px 
+    
 }
 /*
 #tabla-completa img:hover{
@@ -35,13 +40,11 @@ table{
 .jugador1 :hover{
     background-color: rgb(41, 42, 42, 5);
 }
-#p1-vs-p2 {
-    height: 200px;
-    width: 200px;
-}
+
 /*Tamaño del vs */
 #vs { 
     margin-top: 1px;
+     
 }
 
 .jugador1 :hover{
@@ -73,16 +76,18 @@ table{
     border-radius: 15%;
 }
 
-/* PRUEBAS TABLAS */
-table {
-    border: red 5px solid;
-  }
-  tr {
-    border: green 5px solid;
-  }
-  td {
-    border: orange 5px solid;
-    
-  }
 
-  /* FIN PRUEBAS TABLAS */
+
+  /* Tamaño imagenes */
+  img.pequeña{
+    width: 50px;
+    height: 50px;
+  }
+  img.mediana{
+    width: 100px;
+    height: 100px;
+  }
+  img.grande{
+    width: 200px;
+    height: 200px;
+  }

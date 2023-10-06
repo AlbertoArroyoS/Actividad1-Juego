@@ -5,8 +5,6 @@ let optionSelected;
 let caja2;
 let player1;
 let imagePulse;
-
-// console.log("Valor de la imagen: " + valor);
 let botonJugada;
 
 let botonpiedra;
@@ -78,8 +76,11 @@ function initVariables(){
 	//
 	document.getElementById('resultado').textContent='Empieza a jugar';
 	document.getElementById('resultado').style='font-size:30px'
-	document.getElementById('resultado-frase').textContent='';
-	document.getElementById('resultado-frase').style='font-size:20px'
+	document.getElementById('resultado-frase').textContent='INDRODUZCA SU NOMBRE';
+	document.getElementById('resultado-frase').style='font-size:30px'
+	
+	//Quito el borde rojo que he usado en css para guiarme
+	document.getElementById('tabla-completa').id="sin-borde";
 
 }
 
