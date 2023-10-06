@@ -80,7 +80,7 @@ function initVariables(){
 	contadorEmpates=0;
 	contadorPerdidas=0;
 
-	//
+	//Resultado texto
 	document.getElementById('resultado').textContent='Empieza a jugar';
 	document.getElementById('resultado').style='font-size:30px'
 	document.getElementById('resultado-frase').textContent='INDRODUZCA SU NOMBRE';
@@ -277,7 +277,7 @@ function addImgP2 (valor){
 //resumen
 function resumenResultados(){
 
-	puntuacion= "Puntuacion " + contadorGanadas + "/" + contadorPerdidas;
+	puntuacion= "Puntuación " + contadorGanadas + "/" + contadorPerdidas;
 	document.getElementById("puntuacion").textContent= puntuacion;
 
 }

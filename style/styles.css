@@ -91,3 +91,8 @@ table{
     width: 200px;
     height: 200px;
   }
+
+  #puntuacion{
+    text-align: center;
+    font-size: 35px;
+  }
