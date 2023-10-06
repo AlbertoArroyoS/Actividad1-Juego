@@ -20,6 +20,7 @@ let matrizResultados;
 let fraseResultados;
 let resultadoMaquina;
 let resultadoP1VsP2;
+let resultadoEscrito;
 
 //contadores
 let contadorPartidas;
@@ -73,6 +74,10 @@ function initVariables(){
 	contadorGanadas=0;
 	contadorEmpates=0;
 	contadorPerdidas=0;
+
+	//
+	document.getElementById('resultado').textContent='Empieza a jugar';
+	document.getElementById('resultado-frase').textContent='';
 }
 
 //funcion valor imagen pulsada
@@ -128,30 +133,61 @@ function resultadoPartida(numeroOpcion) {
 	//Paso a la matriz el numero que juega aleatorio el ordenador, y el valor del boton pulsado
 	resultadoP1VsP2 = matrizResultados[resultadoMaquina][numeroOpcion];
 
-	console.log('Quien gana: '+ resultadoP1VsP2);
+	
 	//muesto la frase resultante:
 	let fraseFinal = fraseResultados[resultadoMaquina][numeroOpcion];
 	console.log(fraseFinal);
 
+	ganador(resultadoP1VsP2);
+	document.getElementById('resultado').textContent=resultadoEscrito;
+	document.getElementById('resultado-frase').textContent=fraseFinal;
 
-	//Sumo los contadores de partidas jugadas, ganadas y perdidas
+	//Pruebas consola
+	console.log('Quien gana: '+ resultadoP1VsP2);
+	console.log(resultadoEscrito);
+/*
 	switch(resultadoP1VsP2){
 		case 0: //Si hay empate
 			contadorEmpates++;
+			resultadoEscrito= 'Empate';
 			break; 
 		case 1: //Si gana el jugador
 			contadorGanadas++; 
+			resultadoEscrito= 'Has ganado';
 			break; 
 		case 2: //Si gana la maquina
-			contadorPerdidas++; 
+			contadorPerdidas++;
+			resultadoEscrito= 'Has perdido';
 			break;		 
 	}
+	*/
 	// Comprobacion por consola de los contadores
 	console.log('Partidas jugadas: ' + contadorPartidas);
 	console.log('Partidas ganadas: ' + contadorGanadas);
 	console.log('Partidas empatadas: '+ contadorEmpates);
 	console.log('Partidas perdidas: ' + contadorPerdidas);
 	
+}
+
+//Sumo los contadores de partidas jugadas, ganadas y perdidas
+function ganador(numero){
+
+	switch(resultadoP1VsP2){
+		case 0: //Si hay empate
+			contadorEmpates++;
+			resultadoEscrito= 'Empate';
+			break; 
+		case 1: //Si gana el jugador
+			contadorGanadas++; 
+			resultadoEscrito= 'Has ganado';
+			break; 
+		case 2: //Si gana la maquina
+			contadorPerdidas++;
+			resultadoEscrito= 'Has perdido';
+			break;		 
+	}
+	return resultadoEscrito;
+
 }
 
 //Para mostrar en consola la opcion con palabras a la que corresponde el numero
@@ -172,29 +208,6 @@ function pasarNumeroAOpcion(numero){
 			opcion='Lagarto';
 			break; 
 		case 4: 
-			opcion='Spock';
-			break; 
-	}
-	return opcion;
-}
-
-function ganador (numero){
-	let opcion;
-
-	switch(numero){
-		case 0: //Si hay empate
-			opcion='Piedra';
-			break; 
-		case 1: //Si gana el jugador
-			opcion='Papel'; 
-			break; 
-		case 2: //Si gana la maquina
-			opcion='Tijera';
-			break; 
-		case 3: //Si gana la maquina
-			opcion='Lagarto';
-			break; 
-		case 4: //Si gana la maquina
 			opcion='Spock';
 			break; 
 	}
