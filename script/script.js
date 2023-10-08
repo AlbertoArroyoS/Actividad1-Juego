@@ -81,10 +81,7 @@ function initVariables(){
 	botonspock= document.getElementById("btnspock");
 
 	//variables contador				
-	contadorPartidas=0;
-	contadorGanadas=0;
-	contadorEmpates=0;
-	contadorPerdidas=0;
+	resetContadores();
 
 	//Resultado texto
 	document.getElementById('resultado').textContent='Empieza a jugar';
@@ -319,31 +316,68 @@ function activarOpciones(){
 	document.getElementById('button').disabled = false;
 }
 
+//Funcion que nos dice cuando salimos del foco del nombre, que es obligatorio introducir un nombre
+/*
+function mensajeAlertaNombre(){
+
+	nombreCaja.addEventListener("blur",()=>{
+			//alert("Debe introducir un nombre")
+			
+			let respuesta = prompt("Debe introducir su nombre",);
+			document.getElementById("nombre").value=respuesta;
+			if (respuesta !=''){
+				document.getElementById("nombre").value=respuesta;
+				document.getElementById('button').disabled = false;  
+			}
+		});
+
+}
+
+*/
+
+//funcion para resetear los contadores para un nuevo jugador
+
+function resetContadores(){
+
+	contadorPartidas=0;
+	contadorGanadas=0;
+	contadorEmpates=0;
+	contadorPerdidas=0;
+
+}
 
 //funcion para introducir nombre y empezar a jugar
 
 function nombreJurador(){
 
+	
+
 	nombreCaja.addEventListener("input",()=>{
 		if(nombreCaja.value.length >= 1 && nombreCaja.value.length <= 25 ){
 			document.getElementById('button').disabled = false; 
 		}else{
-			document.getElementById('button').disabled = true;  
+			document.getElementById('button').disabled = true;
+			  
 		}
 	});
 	botonNombre.addEventListener('click', () => {
+
+		resetContadores();
+		resumenResultados();
 		document.getElementById('nombre').textContent = nombreCaja.value;
 		
 		player1 = document.getElementById('nombre').textContent = nombreCaja.value;
 		console.log("Mi nombre es: " + player1);
+		//location.reload();
 		document.getElementById('nombreP1').textContent = "Nombre: " + player1;
+		document.getElementById("nombre").value='';
+		
+		//Una vez introducido el nombre, desbloqueo los botones de opciones
 		activarOpciones();
 		empezarPartida();
 
 	
 	});
-
-	
 
 }
 
@@ -351,9 +385,10 @@ function nombreJurador(){
 //uso de las variables
 
 window.addEventListener("load",()=>{
-	
+
 	desactivarOpciones();
     initVariables();
+	//mensajeAlertaNombre();
 	nombreJurador();
 	
 });
