@@ -45,7 +45,7 @@ function initVariables(){
 	
     nombreCaja.focus();
 	//console.log();
-	/* Matriz con opciones por posicion
+	/* Array de 2 dimensiones, matriz con opciones por posicion
 			
 	      			  /0 piedra/1 papel/2 tijera/3 lagarto/4 spock
 			/0/piedra/
@@ -315,9 +315,9 @@ function activarOpciones(){
 	document.getElementById('btnspock').disabled = false;
 	document.getElementById('button').disabled = false;
 }
-
+// ****************************************************************************************
 //Funcion que nos dice cuando salimos del foco del nombre, que es obligatorio introducir un nombre
-/*
+
 function mensajeAlertaNombre(){
 
 	nombreCaja.addEventListener("blur",()=>{
@@ -333,7 +333,7 @@ function mensajeAlertaNombre(){
 
 }
 
-*/
+
 
 //funcion para resetear los contadores para un nuevo jugador
 
@@ -350,7 +350,8 @@ function resetContadores(){
 
 function nombreJurador(){
 
-	
+	//*************************************** */
+	//mensajeAlertaNombre();
 
 	nombreCaja.addEventListener("input",()=>{
 		if(nombreCaja.value.length >= 1 && nombreCaja.value.length <= 25 ){
@@ -364,6 +365,7 @@ function nombreJurador(){
 
 		resetContadores();
 		resumenResultados();
+		resetFondoPc();
 		document.getElementById('nombre').textContent = nombreCaja.value;
 		
 		player1 = document.getElementById('nombre').textContent = nombreCaja.value;
@@ -388,7 +390,7 @@ window.addEventListener("load",()=>{
 
 	desactivarOpciones();
     initVariables();
-	//mensajeAlertaNombre();
+	
 	nombreJurador();
 	
 });
