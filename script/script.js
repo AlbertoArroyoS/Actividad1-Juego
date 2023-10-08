@@ -168,10 +168,9 @@ function resultadoPartida(numeroOpcion) {
 	console.log('Partidas empatadas: '+ contadorEmpates);
 	console.log('Partidas perdidas: ' + contadorPerdidas);
 
-	resumenResultados();
-	
-	
+	resumenResultados();	
 }
+
 
 //Sumo los contadores de partidas jugadas, ganadas y perdidas
 function ganador(numero){
@@ -194,6 +193,29 @@ function ganador(numero){
 	return resultadoEscrito;
 
 }
+
+//resumen resultados
+function resumenResultados(){
+
+	puntuacion= "Puntuación " + contadorGanadas + "/" + contadorPerdidas;
+	document.getElementById("puntuacion").textContent= puntuacion;
+
+}
+
+//funcion que al hacer click sobre la puntuacion te sale un resumen de los resultados
+/*PRUEBAS
+function resumenMouseMove(){
+
+	let resumenAlPasar = document.getElementById("puntuacion");
+	let prueba = "hola";
+	
+	resumenAlPasar.addEventListener("mousemove",()=>{
+	
+	});
+	
+	resumenAlPasar.addEventListener("mousemove","prueba");
+}
+*/
 
 //Para mostrar en consola la opcion con palabras a la que corresponde el numero
 function pasarNumeroAOpcion(numero){
@@ -277,13 +299,7 @@ function addImgP2 (valor){
 	}
 
 }
-//resumen
-function resumenResultados(){
 
-	puntuacion= "Puntuación " + contadorGanadas + "/" + contadorPerdidas;
-	document.getElementById("puntuacion").textContent= puntuacion;
-
-}
 //funcion para resetear fondo de pantalla antes de cada partida
 
 function resetFondoPc(){
@@ -390,13 +406,15 @@ function nombreJurador(){
 }
 
 
+
+
 //uso de las variables
 
 window.addEventListener("load",()=>{
 
 	desactivarOpciones();
     initVariables();
-	
+	//resumenMouseMove();
 	nombreJurador();
 	
 });
