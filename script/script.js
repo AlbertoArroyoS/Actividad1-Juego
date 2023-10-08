@@ -334,7 +334,6 @@ function mensajeAlertaNombre(){
 }
 
 
-
 //funcion para resetear los contadores para un nuevo jugador
 
 function resetContadores(){
@@ -363,16 +362,23 @@ function nombreJurador(){
 	});
 	botonNombre.addEventListener('click', () => {
 
+		//reseteo los contadores,resultados y opciones seleccionadas
 		resetContadores();
 		resumenResultados();
 		resetFondoPc();
+
+		//pongo el nombre introducido en la caja de texto al nombre del jugador al darle al boton
 		document.getElementById('nombre').textContent = nombreCaja.value;
 		
 		player1 = document.getElementById('nombre').textContent = nombreCaja.value;
 		console.log("Mi nombre es: " + player1);
 		//location.reload();
+		//añado el nombre del jugador a la partida
 		document.getElementById('nombreP1').textContent = "Nombre: " + player1;
+		//pongo la caja de texto vacia por si se quiere introducir otro nombre
 		document.getElementById("nombre").value='';
+		//Quito la frase de introduzca su nombre
+		document.getElementById('resultado-frase').textContent='';
 		
 		//Una vez introducido el nombre, desbloqueo los botones de opciones
 		activarOpciones();
