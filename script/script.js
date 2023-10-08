@@ -56,6 +56,7 @@ function initVariables(){
 
 		Resultado= 0 empate, 1 gana p1, 2 gana ordenador
 	*/
+	
 	matrizResultados=[
 					[0,1,2,2,1],
 					[2,0,1,1,2],
@@ -243,7 +244,7 @@ function pasarNumeroAOpcion(numero){
 
 //añadir imagen grande a boton seleccionado jugador
 function addImgP1 (valor){
-	let miJugada;
+	//añado una etiqueta img con la propiedad src que corresponda segun el resultado elegido en la matriz
 	let imagen = document.createElement("img");
 
 	switch (valor){
@@ -266,7 +267,7 @@ function addImgP1 (valor){
 }
 //añadir imagen grande a boton seleccionado ordenador aleatorio, añado que se ponga el fondo de pantalla a la img pequeña
 function addImgP2 (valor){
-	let miJugada;
+	//añado una etiqueta img con la propiedad src que corresponda segun el resultado aleatorio del ordenador
 	let imagen = document.createElement("img");
 	resetFondoPc();
 
@@ -322,7 +323,7 @@ function desactivarOpciones(){
 	document.getElementById('button').disabled = true;
 }
 
-//Funcio activar las opciones una vez se ha introducido el nombre
+//Funcion activar las opciones una vez se ha introducido el nombre
 function activarOpciones(){
 	document.getElementById('btnpiedra').disabled = false;
 	document.getElementById('btnpapel').disabled = false;
@@ -336,7 +337,8 @@ function activarOpciones(){
 
 function mensajeAlertaNombre(){
 
-	nombreCaja.addEventListener("blur",()=>{
+		console.log(nombreCaja.value);
+		nombreCaja.addEventListener("blur",()=>{
 			//alert("Debe introducir un nombre")
 			
 			let respuesta = prompt("Debe introducir su nombre",);
@@ -366,7 +368,14 @@ function resetContadores(){
 function nombreJurador(){
 
 	//*************************************** */
-	//mensajeAlertaNombre();
+	
+	console.log(nombreCaja.value);
+	if (nombreCaja.value == ''){
+		//mensajeAlertaNombre();
+	}
+	
+
+
 
 	nombreCaja.addEventListener("input",()=>{
 		if(nombreCaja.value.length >= 1 && nombreCaja.value.length <= 25 ){
@@ -399,9 +408,8 @@ function nombreJurador(){
 		//Una vez introducido el nombre, desbloqueo los botones de opciones
 		activarOpciones();
 		empezarPartida();
-
-	
 	});
+	
 
 }
 
@@ -411,7 +419,7 @@ function nombreJurador(){
 //uso de las variables
 
 window.addEventListener("load",()=>{
-
+	
 	desactivarOpciones();
     initVariables();
 	//resumenMouseMove();
