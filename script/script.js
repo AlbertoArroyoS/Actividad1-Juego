@@ -1,6 +1,6 @@
 //declarar de las variables
-let nameBox;
-let button;
+let nombreCaja;
+let botonNombre;
 let optionSelected;
 let caja2;
 let player1;
@@ -35,9 +35,15 @@ let resumenPerdidas;
 
 //inicialización de las variables
 function initVariables(){
-    nameBox = document.getElementById("nombre");
-    button = document.getElementById("button");
-    nameBox.focus();
+    nombreCaja = document.getElementById("nombre");
+	botonNombre = document.getElementById("button");
+	/*
+	botonNombre.addEventListener('click', () => {
+		document.getElementById('nombre').textContent = nombreCaja.value;
+	});
+	*/
+	
+    nombreCaja.focus();
 	//console.log();
 	/* Matriz con opciones por posicion
 			
@@ -292,20 +298,62 @@ function resetFondoPc(){
 			document.getElementById("pcspock").style.backgroundColor = "transparent";
 
 }
+//Funcion para bloquear los botones al inicio hasta que se ponga el nombre
+
+function desactivarOpciones(){
+	document.getElementById('btnpiedra').disabled = true;
+	document.getElementById('btnpapel').disabled = true;
+	document.getElementById('btntijera').disabled = true;
+	document.getElementById('btnlagarto').disabled = true;
+	document.getElementById('btnspock').disabled = true;
+	document.getElementById('button').disabled = true;
+}
+
+//Funcio activar las opciones una vez se ha introducido el nombre
+function activarOpciones(){
+	document.getElementById('btnpiedra').disabled = false;
+	document.getElementById('btnpapel').disabled = false;
+	document.getElementById('btntijera').disabled = false;
+	document.getElementById('btnlagarto').disabled = false;
+	document.getElementById('btnspock').disabled = false;
+	document.getElementById('button').disabled = false;
+}
+
+
+//funcion para introducir nombre y empezar a jugar
+
+function nombreJurador(){
+
+	nombreCaja.addEventListener("input",()=>{
+		if(nombreCaja.value.length >= 1 && nombreCaja.value.length <= 25 ){
+			document.getElementById('button').disabled = false; 
+		}else{
+			document.getElementById('button').disabled = true;  
+		}
+	});
+	botonNombre.addEventListener('click', () => {
+		document.getElementById('nombre').textContent = nombreCaja.value;
+		
+		player1 = document.getElementById('nombre').textContent = nombreCaja.value;
+		console.log("Mi nombre es: " + player1);
+		document.getElementById('nombreP1').textContent = "Nombre: " + player1;
+		activarOpciones();
+		empezarPartida();
+
+	
+	});
+
+	
+
+}
+
 
 //uso de las variables
 
 window.addEventListener("load",()=>{
-
-
+	
+	desactivarOpciones();
     initVariables();
-	empezarPartida();
-    nameBox.addEventListener("input",()=>{
-		if(nameBox.value.length >= 1 && nameBox.value.length <= 25 ){
-			button.disabled = false; 
-		}else{
-			button.disabled = true; 
-		}
-	});
-
+	nombreJurador();
+	
 });
