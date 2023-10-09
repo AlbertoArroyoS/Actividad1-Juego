@@ -390,7 +390,8 @@ window.addEventListener("load",()=>{
 
 	//listener para resumen resultados al hacer click sobre la puntuacion
 	marcadorPuntuacion.addEventListener("click",()=>{
-		alert('Partidas jugadas: '+ contadorPartidas + '\n'+
+		alert('Nombre jugador: '+ player1 + '\n'+
+			'Partidas jugadas: '+ contadorPartidas + '\n'+
 			'Partidas ganadas: ' + contadorGanadas + '\n'+
 			'Partidas empatadas: '+ contadorEmpates + '\n'+
 			'Partidas perdidas: ' + contadorPerdidas + '\n'
