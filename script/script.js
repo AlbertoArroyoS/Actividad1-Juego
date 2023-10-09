@@ -315,6 +315,30 @@ function resetContadores(){
 
 }
 
+//funcion para empezar la partida
+
+function empezarPartida(){
+	//reseteo los contadores,resultados y opciones seleccionadas
+	document.getElementById('resultado').textContent='Empieza a jugar';
+	resetContadores();
+	resumenResultados();
+	resetFondoPc();
+
+	//pongo el nombre introducido en la caja de texto al nombre del jugador al darle al boton
+	document.getElementById('nombre').textContent = nombreCaja.value;
+
+	player1 = document.getElementById('nombre').textContent = nombreCaja.value;
+	console.log("Mi nombre es: " + player1);
+	//location.reload();
+	//añado el nombre del jugador a la partida
+	document.getElementById('nombreP1').textContent = "Nombre: " + player1;
+	//pongo la caja de texto vacia por si se quiere introducir otro nombre
+	document.getElementById("nombre").value='';
+	//Quito la frase de introduzca su nombre
+	document.getElementById('resultado-frase').textContent='';
+
+}
+
 //Onload con los listeners
 
 window.addEventListener("load",()=>{
@@ -352,25 +376,8 @@ window.addEventListener("load",()=>{
 	//listener empezar partida al darle a aceptar
 	botonNombre.addEventListener('click', () => {
 
-		//reseteo los contadores,resultados y opciones seleccionadas
-		document.getElementById('resultado').textContent='Empieza a jugar';
-		resetContadores();
-		resumenResultados();
-		resetFondoPc();
-
-		//pongo el nombre introducido en la caja de texto al nombre del jugador al darle al boton
-		document.getElementById('nombre').textContent = nombreCaja.value;
-		
-		player1 = document.getElementById('nombre').textContent = nombreCaja.value;
-		console.log("Mi nombre es: " + player1);
-		//location.reload();
-		//añado el nombre del jugador a la partida
-		document.getElementById('nombreP1').textContent = "Nombre: " + player1;
-		//pongo la caja de texto vacia por si se quiere introducir otro nombre
-		document.getElementById("nombre").value='';
-		//Quito la frase de introduzca su nombre
-		document.getElementById('resultado-frase').textContent='';
-		
+		//llamada a la funcion para empezar la partida
+		empezarPartida();
 		//Una vez introducido el nombre, desbloqueo los botones de opciones
 		activarOpciones();
 		
@@ -383,9 +390,14 @@ window.addEventListener("load",()=>{
 	botonlagarto.addEventListener("click",eligio_lagarto);
 	botonspock.addEventListener("click",eligio_spock);
 
-	//listener que cambie el cursor del raton al pasar por la puntuacion
+	//listener que cambie el cursor del raton al pasar por la puntuacion y se pone la letra roja
 	marcadorPuntuacion.addEventListener("mouseenter",()=>{
 		marcadorPuntuacion.style.cursor = "pointer";
+		marcadorPuntuacion.style.color = "red";
+	});
+	//al salir el raton se vuelve negro
+	marcadorPuntuacion.addEventListener("mouseout",()=>{
+		marcadorPuntuacion.style.color = "black";
 	});
 
 	//listener para resumen resultados al hacer click sobre la puntuacion
