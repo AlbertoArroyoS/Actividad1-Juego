@@ -95,18 +95,6 @@ function initVariables(){
 
 }
 
-//funcion valor imagen pulsada
-
-function empezarPartida(){
-	
-	//listeners
-	botonpiedra.addEventListener("click",eligio_piedra);
-	botonpapel.addEventListener("click",eligio_papel);
-	botontijera.addEventListener("click",eligio_tijeras);
-	botonlagarto.addEventListener("click",eligio_lagarto);
-	botonspock.addEventListener("click",eligio_spock);
-	
-}
 
 
 function eligio_piedra(){
@@ -203,20 +191,6 @@ function resumenResultados(){
 
 }
 
-//funcion que al hacer click sobre la puntuacion te sale un resumen de los resultados
-/*PRUEBAS
-function resumenMouseMove(){
-
-	let resumenAlPasar = document.getElementById("puntuacion");
-	let prueba = "hola";
-	
-	resumenAlPasar.addEventListener("mousemove",()=>{
-	
-	});
-	
-	resumenAlPasar.addEventListener("mousemove","prueba");
-}
-*/
 
 //Para mostrar en consola la opcion con palabras a la que corresponde el numero
 function pasarNumeroAOpcion(numero){
@@ -332,24 +306,6 @@ function activarOpciones(){
 	document.getElementById('btnspock').disabled = false;
 	document.getElementById('button').disabled = false;
 }
-// ****************************************************************************************
-//Funcion que nos dice cuando salimos del foco del nombre, que es obligatorio introducir un nombre
-
-function mensajeAlertaNombre(){
-
-		console.log(nombreCaja.value);
-		nombreCaja.addEventListener("blur",()=>{
-			//alert("Debe introducir un nombre")
-			
-			let respuesta = prompt("Debe introducir su nombre",);
-			document.getElementById("nombre").value=respuesta;
-			if (respuesta !=''){
-				document.getElementById("nombre").value=respuesta;
-				document.getElementById('button').disabled = false;  
-			}
-		});
-
-}
 
 
 //funcion para resetear los contadores para un nuevo jugador
@@ -363,28 +319,36 @@ function resetContadores(){
 
 }
 
-//funcion para introducir nombre y empezar a jugar
+//uso de las variables
 
-function nombreJurador(){
-
-	//*************************************** */
+window.addEventListener("load",()=>{
 	
-	console.log(nombreCaja.value);
-	if (nombreCaja.value == ''){
-		//mensajeAlertaNombre();
-	}
-	
+	desactivarOpciones();
+    initVariables();
 
-
+	//Listener para que aparezca el boton aceptar tienes que poner minimo un caracter de entrada en la caja de texto
 
 	nombreCaja.addEventListener("input",()=>{
+
 		if(nombreCaja.value.length >= 1 && nombreCaja.value.length <= 25 ){
 			document.getElementById('button').disabled = false; 
 		}else{
 			document.getElementById('button').disabled = true;
 			  
 		}
+		
 	});
+	//listener pata que aparezca un promt si pierdes el foco de la caja de texto sin poner el nombre
+	nombreCaja.addEventListener("blur",()=>{
+		//alert("Debe introducir un nombre")
+		if (document.getElementById("nombre").value ==''){
+			let respuesta = prompt("Debe introducir su nombre",);
+			document.getElementById("nombre").value=respuesta;
+			document.getElementById('button').disabled = false;
+		}
+	});
+
+	//listener empezar partida al darle a aceptar
 	botonNombre.addEventListener('click', () => {
 
 		//reseteo los contadores,resultados y opciones seleccionadas
@@ -407,21 +371,16 @@ function nombreJurador(){
 		
 		//Una vez introducido el nombre, desbloqueo los botones de opciones
 		activarOpciones();
-		empezarPartida();
+		
 	});
-	
 
-}
+	//listeners opciones jugador 
+	botonpiedra.addEventListener("click",eligio_piedra);
+	botonpapel.addEventListener("click",eligio_papel);
+	botontijera.addEventListener("click",eligio_tijeras);
+	botonlagarto.addEventListener("click",eligio_lagarto);
+	botonspock.addEventListener("click",eligio_spock);
 
-
-
-
-//uso de las variables
-
-window.addEventListener("load",()=>{
-	
-	desactivarOpciones();
-    initVariables();
 	//resumenMouseMove();
 	nombreJurador();
 	
