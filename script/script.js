@@ -357,6 +357,7 @@ window.addEventListener("load",()=>{
 	botonNombre.addEventListener('click', () => {
 
 		//reseteo los contadores,resultados y opciones seleccionadas
+		document.getElementById('resultado').textContent='Empieza a jugar';
 		resetContadores();
 		resumenResultados();
 		resetFondoPc();
