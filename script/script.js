@@ -31,6 +31,7 @@ let resumenJugadas;
 let resumenGanadas;
 let resumenEmpatadas;
 let resumenPerdidas;
+let marcadorPuntuacion;
 
 
 //inicialización de las variables
@@ -38,6 +39,7 @@ function initVariables(){
     nombreCaja = document.getElementById("nombre");
 	botonNombre = document.getElementById("button");
     nombreCaja.focus();
+	marcadorPuntuacion = document.getElementById("puntuacion");
 	//console.log();
 	/* Array de 2 dimensiones, matriz con opciones por posicion
 			
@@ -381,15 +383,18 @@ window.addEventListener("load",()=>{
 	botonlagarto.addEventListener("click",eligio_lagarto);
 	botonspock.addEventListener("click",eligio_spock);
 
-	//listener para resumen resultados
-	nombreCaja.addEventListener("blur",()=>{
-		//alert("Debe introducir un nombre")
-		if (document.getElementById("nombre").value ==''){
-			let respuesta = prompt("Debe introducir su nombre",);
-			document.getElementById("nombre").value=respuesta;
-			document.getElementById('button').disabled = false;
-		}
+	//listener que cambie el cursor del raton al pasar por la puntuacion
+	marcadorPuntuacion.addEventListener("mouseenter",()=>{
+		marcadorPuntuacion.style.cursor = "pointer";
 	});
 
-	
+	//listener para resumen resultados al hacer click sobre la puntuacion
+	marcadorPuntuacion.addEventListener("click",()=>{
+		alert('Partidas jugadas: '+ contadorPartidas + '\n'+
+			'Partidas ganadas: ' + contadorGanadas + '\n'+
+			'Partidas empatadas: '+ contadorEmpates + '\n'+
+			'Partidas perdidas: ' + contadorPerdidas + '\n'
+		);
+	});
+
 });
