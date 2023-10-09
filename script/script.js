@@ -37,12 +37,6 @@ let resumenPerdidas;
 function initVariables(){
     nombreCaja = document.getElementById("nombre");
 	botonNombre = document.getElementById("button");
-	/*
-	botonNombre.addEventListener('click', () => {
-		document.getElementById('nombre').textContent = nombreCaja.value;
-	});
-	*/
-	
     nombreCaja.focus();
 	//console.log();
 	/* Array de 2 dimensiones, matriz con opciones por posicion
@@ -322,7 +316,7 @@ function resetContadores(){
 //Onload con los listeners
 
 window.addEventListener("load",()=>{
-	//modificar/desactivar opciones del html y css que no interesan
+	//Añado la propiedad disabled a los botones, ya que el html no los tiene, porque quiero bloquearlos hasta que se ponga el nombre
 	desactivarOpciones();
 
 	//inicializar variables
@@ -388,5 +382,14 @@ window.addEventListener("load",()=>{
 	botonspock.addEventListener("click",eligio_spock);
 
 	//listener para resumen resultados
+	nombreCaja.addEventListener("blur",()=>{
+		//alert("Debe introducir un nombre")
+		if (document.getElementById("nombre").value ==''){
+			let respuesta = prompt("Debe introducir su nombre",);
+			document.getElementById("nombre").value=respuesta;
+			document.getElementById('button').disabled = false;
+		}
+	});
+
 	
 });
