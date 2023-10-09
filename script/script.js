@@ -319,14 +319,18 @@ function resetContadores(){
 
 }
 
-//uso de las variables
+//Onload con los listeners
 
 window.addEventListener("load",()=>{
-	
+	//modificar/desactivar opciones del html y css que no interesan
 	desactivarOpciones();
+
+	//inicializar variables
     initVariables();
 
-	//Listener para que aparezca el boton aceptar tienes que poner minimo un caracter de entrada en la caja de texto
+	/* LISTENERS */
+
+	//listener para que aparezca el boton aceptar tienes que poner minimo un caracter de entrada en la caja de texto
 
 	nombreCaja.addEventListener("input",()=>{
 
@@ -338,6 +342,7 @@ window.addEventListener("load",()=>{
 		}
 		
 	});
+
 	//listener pata que aparezca un promt si pierdes el foco de la caja de texto sin poner el nombre
 	nombreCaja.addEventListener("blur",()=>{
 		//alert("Debe introducir un nombre")
@@ -381,7 +386,6 @@ window.addEventListener("load",()=>{
 	botonlagarto.addEventListener("click",eligio_lagarto);
 	botonspock.addEventListener("click",eligio_spock);
 
-	//resumenMouseMove();
-	nombreJurador();
+	//listener para resumen resultados
 	
 });
