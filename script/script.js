@@ -431,11 +431,22 @@ window.addEventListener("load",()=>{
 	});
 	//listener para decir las normas del juego al pulsar
 	tituloCabecera.addEventListener("click",()=>{
-		alert('Normas juego: '+ player1 + '\n'+
-			'Partidas jugadas: '+ contadorPartidas + '\n'+
-			'Partidas ganadas: ' + contadorGanadas + '\n'+
-			'Partidas empatadas: '+ contadorEmpates + '\n'+
-			'Partidas perdidas: ' + contadorPerdidas + '\n'
+		alert('Normas juego: '+ '\n'+
+			'1º Ponga su nombre. ' + '\n'+
+			'2º Pulse la opción deseada a la izquierda. ' + '\n'+
+			'Normas del juego: '+'\n'+
+			'Tijera corta a papel,'+ '\n'+
+			'papel tapa a piedra,' + '\n'+
+			'piedra aplasta a lagarto,' + '\n'+
+			'lagarto envenena a Spock,' + '\n'+
+			'Spock rompe a tijera,' + '\n'+
+			'tijera decapita a lagarto,' + '\n'+
+			'lagarto devora a papel,' + '\n'+
+			'papel desautoriza a Spock,'+ '\n'+
+			'Spock vaporiza a piedra,' + '\n'+
+			'y como siempre,' + '\n'+
+			'piedra aplasta a tijera' + '\n'+
+			'MUCHA SUERTE' + '\n'	
 		);
 	});
 	//listener que cambie el cursor del raton al pasar por el nombre y se pone la letra roja
