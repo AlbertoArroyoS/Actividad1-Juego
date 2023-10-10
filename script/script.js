@@ -63,7 +63,7 @@ function initVariables(){
 	// Por cada posicion de la matriz anterior tiene una frase 
 	fraseResultados = [
 					["Empate","Papel tapa piedra","Piedra rompe tijeras","Piedra aplasta lagarto","Spock vaporiza piedra"],
-					["Papel tapa piedra","Empate","tijeras cortan papel","lagarto devora papel","Papel desautoriza a Spock"],
+					["Papel tapa piedra","Empate","Tijeras cortan papel","Lagarto devora papel","Papel desautoriza a Spock"],
 					["Piedra rompe tijeras","Tijeras cortan papel","Empate","Tijeras decapitan lagarto","Spock rompe tijeras"],
 					["Piedra aplasta lagarto","Lagarto devora papel","Tijeras decapitan lagarto","Empate","Lagarto envenena a Spock"],
 					["Spock vaporiza piedra","Papel desautoriza a Spock","Spock rompe tijeras","Lagarto envenena a Spock","Empate"]
@@ -82,7 +82,8 @@ function initVariables(){
 
 	//Resultado texto
 	document.getElementById('resultado').textContent='Empieza a jugar';
-	document.getElementById('resultado').style='font-size:30px'
+	document.getElementById('resultado').style='font-size:25px'
+	document.getElementById('resultado').style='font-weight: bold'; 
 	document.getElementById('resultado-frase').textContent='INDRODUZCA SU NOMBRE';
 	document.getElementById('resultado-frase').style='font-size:30px'
 
@@ -173,11 +174,13 @@ function ganador(numero){
 			document.getElementById("sheldon").src="/icon/win.png";
 			document.getElementById("p1").style.backgroundColor = "yellow";
 			document.getElementById("p1").style.borderRadius = "10%";
+			//style.backgroundImage = "url('tuUrl')";
+			//document.getElementById("p1").style.backgroundImage = "url('/icon/estrella.png')";
 			break; 
 		case 2: //Si gana la maquina
 			contadorPerdidas++;
 			resultadoEscrito= 'Has perdido: ';
-			document.getElementById("sheldon").src="/icon/lose.png";
+			document.getElementById("sheldon").src="/icon/perdedor.png";
 			document.getElementById("p1").style.backgroundColor = "red";
 			document.getElementById("p1").style.borderRadius = "10%";
 			break;		 

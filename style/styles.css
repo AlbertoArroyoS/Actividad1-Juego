@@ -17,6 +17,7 @@ table{
     margin-right: 5%;
     height: 100%;
     width: 100%;
+    font-size: 25px;
 }
 
 
@@ -56,6 +57,8 @@ table{
 
 #resultado {
     text-align: center;
+    font-size: 50px;
+    
 }
 
 #resultado-frase {
@@ -99,5 +102,6 @@ table{
 
   #puntuacion{
     text-align: center;
-    font-size: 35px;
+    font-size: 40px;
+    
   }
