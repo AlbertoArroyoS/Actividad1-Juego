@@ -429,7 +429,7 @@ window.addEventListener("load",()=>{
 			'Partidas perdidas: ' + contadorPerdidas + '\n'
 		);
 	});
-	//listener para resumen resultados al hacer click sobre la puntuacion
+	//listener para decir las normas del juego al pulsar
 	tituloCabecera.addEventListener("click",()=>{
 		alert('Normas juego: '+ player1 + '\n'+
 			'Partidas jugadas: '+ contadorPartidas + '\n'+
@@ -438,7 +438,7 @@ window.addEventListener("load",()=>{
 			'Partidas perdidas: ' + contadorPerdidas + '\n'
 		);
 	});
-	//listener que cambie el cursor del raton al pasar por la puntuacion y se pone la letra roja
+	//listener que cambie el cursor del raton al pasar por el nombre y se pone la letra roja
 	tituloCabecera.addEventListener("mouseenter",()=>{
 		tituloCabecera.style.cursor = "pointer";
 		tituloCabecera.style.color = "red";

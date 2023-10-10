@@ -2,9 +2,10 @@ html{
     font-family: 'Poppins', sans-serif;
     font-family: 'Kanit', sans-serif;
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(159, 248, 248);
+   /* background-color: rgb(159, 248, 248);*/
     background-repeat: repeat-y;
     background-size: cover;
+    background-image: url(/img/fondo-azul2.jpg);
 }
 
 /* Eliminar el subrayado de los enlaces */
