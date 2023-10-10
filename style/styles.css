@@ -26,12 +26,13 @@ table{
     border: red 5px solid;
     text-align: center;
 }
+/* Quitar los bordes que he usado de guia para cuadrar la tabla*/
 
-#sin-borde td {
-    border: 0; 
-    border-bottom:1px 
-    
+#tabla-completa-transparente td{
+    border: transparent 5px solid;
+    text-align: center;
 }
+
 /*
 #tabla-completa img:hover{
     background-color: rgb(41, 42, 42, 5);

@@ -86,12 +86,12 @@ function initVariables(){
 	document.getElementById('resultado-frase').textContent='INDRODUZCA SU NOMBRE';
 	document.getElementById('resultado-frase').style='font-size:30px'
 
-	//Quito el borde rojo que he usado en css para guiarme
-	document.getElementById('tabla-completa').id="sin-borde";
+	//******Quito el borde rojo que he usado en css para guiarme
+	document.getElementById('tabla-completa').id="tabla-completa-transparente";
 
 }
 
-
+//funciones asinar un valor a cada opcion pulsada
 
 function eligio_piedra(){
 	resultadoBoton=0;
@@ -275,11 +275,11 @@ function addImgP2 (valor){
 
 function resetFondoPc(){
 	
-			document.getElementById("pcpiedra").style.backgroundColor = "transparent";
-			document.getElementById("pcpapel").style.backgroundColor = "transparent";
-			document.getElementById("pctijeras").style.backgroundColor = "transparent";
-			document.getElementById("pclagarto").style.backgroundColor = "transparent";
-			document.getElementById("pcspock").style.backgroundColor = "transparent";
+	document.getElementById("pcpiedra").style.backgroundColor = "transparent";
+	document.getElementById("pcpapel").style.backgroundColor = "transparent";
+	document.getElementById("pctijeras").style.backgroundColor = "transparent";
+	document.getElementById("pclagarto").style.backgroundColor = "transparent";
+	document.getElementById("pcspock").style.backgroundColor = "transparent";
 
 }
 //Funcion para bloquear los botones al inicio hasta que se ponga el nombre
@@ -348,6 +348,8 @@ window.addEventListener("load",()=>{
 	//inicializar variables
     initVariables();
 
+	
+
 	/* LISTENERS */
 
 	//listener para que aparezca el boton aceptar tienes que poner minimo un caracter de entrada en la caja de texto
@@ -355,10 +357,9 @@ window.addEventListener("load",()=>{
 	nombreCaja.addEventListener("input",()=>{
 
 		if(nombreCaja.value.length >= 1 && nombreCaja.value.length <= 25 ){
-			document.getElementById('button').disabled = false; 
+			document.getElementById('button').disabled = false;	
 		}else{
-			document.getElementById('button').disabled = true;
-			  
+			document.getElementById('button').disabled = true;	  
 		}
 		
 	});
@@ -380,6 +381,8 @@ window.addEventListener("load",()=>{
 		empezarPartida();
 		//Una vez introducido el nombre, desbloqueo los botones de opciones
 		activarOpciones();
+		//desactivo el boton hasta que no se ponga un nuevo caracter en la caja del nombre
+		document.getElementById('button').disabled = true;
 		
 	});
 
