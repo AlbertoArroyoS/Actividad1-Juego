@@ -88,7 +88,7 @@ function initVariables(){
 	document.getElementById('resultado-frase').style='font-size:30px'
 
 	//******Quito el borde rojo que he usado en css para guiarme
-	document.getElementById('tabla-completa').id="tabla-completa-transparente";
+	//document.getElementById('tabla-completa').id="tabla-completa-transparente";
 
 }
 
