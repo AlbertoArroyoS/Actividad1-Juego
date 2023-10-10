@@ -165,14 +165,17 @@ function ganador(numero){
 			contadorEmpates++;
 			resultadoEscrito= '';
 			document.getElementById('resultado-frase').style='font-size:30px'
+			document.getElementById("sheldon").src="/icon/equal.png";
 			break; 
 		case 1: //Si gana el jugador
 			contadorGanadas++; 
 			resultadoEscrito= 'Has ganado: ';
+			document.getElementById("sheldon").src="/icon/win.png";
 			break; 
 		case 2: //Si gana la maquina
 			contadorPerdidas++;
 			resultadoEscrito= 'Has perdido: ';
+			document.getElementById("sheldon").src="/icon/lose.png";
 			break;		 
 	}
 	return resultadoEscrito;
@@ -320,6 +323,7 @@ function resetContadores(){
 function empezarPartida(){
 	//reseteo los contadores,resultados y opciones seleccionadas
 	document.getElementById('resultado').textContent='Empieza a jugar';
+	document.getElementById("sheldon").src="/icon/sheldon.png";
 	resetContadores();
 	resumenResultados();
 	resetFondoPc();
