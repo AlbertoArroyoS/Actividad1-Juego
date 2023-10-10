@@ -445,8 +445,8 @@ window.addEventListener("load",()=>{
 			'papel desautoriza a Spock,'+ '\n'+
 			'Spock vaporiza a piedra,' + '\n'+
 			'y como siempre,' + '\n'+
-			'piedra aplasta a tijera' + '\n'+
-			'MUCHA SUERTE' + '\n'	
+			'piedra aplasta a tijera.' + '\n'+
+			'¡¡MUCHA SUERTE!!' + '\n'	
 		);
 	});
 	//listener que cambie el cursor del raton al pasar por el nombre y se pone la letra roja
