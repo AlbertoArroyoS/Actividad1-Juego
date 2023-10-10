@@ -171,11 +171,15 @@ function ganador(numero){
 			contadorGanadas++; 
 			resultadoEscrito= 'Has ganado: ';
 			document.getElementById("sheldon").src="/icon/win.png";
+			document.getElementById("p1").style.backgroundColor = "yellow";
+			document.getElementById("p1").style.borderRadius = "10%";
 			break; 
 		case 2: //Si gana la maquina
 			contadorPerdidas++;
 			resultadoEscrito= 'Has perdido: ';
 			document.getElementById("sheldon").src="/icon/lose.png";
+			document.getElementById("p1").style.backgroundColor = "red";
+			document.getElementById("p1").style.borderRadius = "10%";
 			break;		 
 	}
 	return resultadoEscrito;
@@ -277,12 +281,14 @@ function addImgP2 (valor){
 //funcion para resetear fondo de pantalla antes de cada partida
 
 function resetFondoPc(){
-	
+	//iconos opcion ordenador
 	document.getElementById("pcpiedra").style.backgroundColor = "transparent";
 	document.getElementById("pcpapel").style.backgroundColor = "transparent";
 	document.getElementById("pctijeras").style.backgroundColor = "transparent";
 	document.getElementById("pclagarto").style.backgroundColor = "transparent";
 	document.getElementById("pcspock").style.backgroundColor = "transparent";
+	//icono grande jugador1
+	document.getElementById("p1").style.backgroundColor = "transparent";
 
 }
 //Funcion para bloquear los botones al inicio hasta que se ponga el nombre
