@@ -33,6 +33,8 @@ let resumenEmpatadas;
 let resumenPerdidas;
 let marcadorPuntuacion;
 
+let tituloCabecera;
+
 
 //inicialización de las variables
 function initVariables(){
@@ -90,6 +92,8 @@ function initVariables(){
 	//******Quito el borde rojo que he usado en css para guiarme
 	document.getElementById('tabla-completa').id="tabla-completa-transparente";
 
+	//titulo cabecera
+	tituloCabecera = document.getElementById('cabecera');
 }
 
 //funciones asinar un valor a cada opcion pulsada
@@ -424,6 +428,24 @@ window.addEventListener("load",()=>{
 			'Partidas empatadas: '+ contadorEmpates + '\n'+
 			'Partidas perdidas: ' + contadorPerdidas + '\n'
 		);
+	});
+	//listener para resumen resultados al hacer click sobre la puntuacion
+	tituloCabecera.addEventListener("click",()=>{
+		alert('Normas juego: '+ player1 + '\n'+
+			'Partidas jugadas: '+ contadorPartidas + '\n'+
+			'Partidas ganadas: ' + contadorGanadas + '\n'+
+			'Partidas empatadas: '+ contadorEmpates + '\n'+
+			'Partidas perdidas: ' + contadorPerdidas + '\n'
+		);
+	});
+	//listener que cambie el cursor del raton al pasar por la puntuacion y se pone la letra roja
+	tituloCabecera.addEventListener("mouseenter",()=>{
+		tituloCabecera.style.cursor = "pointer";
+		tituloCabecera.style.color = "red";
+	});
+	//al salir el raton se vuelve negro
+	tituloCabecera.addEventListener("mouseout",()=>{
+		tituloCabecera.style.color = "black";
 	});
 
 });
