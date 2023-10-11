@@ -108,3 +108,11 @@ table{
     font-size: 40px;
     
   }
+
+#audio-win{
+    display: none
+}
+
+#audio-lose{
+    display: none
+}

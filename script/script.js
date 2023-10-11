@@ -34,6 +34,9 @@ let resumenPerdidas;
 let marcadorPuntuacion;
 
 let tituloCabecera;
+//variables sonido
+let audioWin;
+let audioLose;
 
 
 //inicialización de las variables
@@ -94,6 +97,10 @@ function initVariables(){
 
 	//titulo cabecera
 	tituloCabecera = document.getElementById('cabecera');
+
+	//audio
+	audioWin = document.getElementById("audio-win");
+	audioLose = document.getElementById("audio-lose");
 }
 
 //funciones asinar un valor a cada opcion pulsada
@@ -169,24 +176,33 @@ function ganador(numero){
 		case 0: //Si hay empate
 			contadorEmpates++;
 			resultadoEscrito= '';
+			
+			
 			document.getElementById('resultado-frase').style='font-size:30px'
 			document.getElementById("sheldon").src="/icon/equal.png";
 			break; 
 		case 1: //Si gana el jugador
 			contadorGanadas++; 
 			resultadoEscrito= 'Has ganado: ';
+			//sonido ganador
+			audioWin.play();
+			//icono ganador y fondo amarillo al icono
 			document.getElementById("sheldon").src="/icon/win.png";
 			document.getElementById("p1").style.backgroundColor = "yellow";
 			document.getElementById("p1").style.borderRadius = "10%";
 			//style.backgroundImage = "url('tuUrl')";
-			//document.getElementById("p1").style.backgroundImage = "url('/icon/estrella.png')";
+			
 			break; 
 		case 2: //Si gana la maquina
 			contadorPerdidas++;
 			resultadoEscrito= 'Has perdido: ';
+			//sonido perdedor
+			audioLose.play();
+			//icono perder y fondo rojo al icono
 			document.getElementById("sheldon").src="/icon/perdedor.png";
 			document.getElementById("p1").style.backgroundColor = "red";
 			document.getElementById("p1").style.borderRadius = "10%";
+			
 			break;		 
 	}
 	return resultadoEscrito;
@@ -432,7 +448,7 @@ window.addEventListener("load",()=>{
 	//listener para decir las normas del juego al pulsar
 	tituloCabecera.addEventListener("click",()=>{
 		alert('Normas juego: '+ '\n'+
-			'1º Ponga su nombre. ' + '\n'+
+			'1º Ponga su nombre y pulse aceptar. ' + '\n'+
 			'2º Pulse la opción deseada a la izquierda. ' + '\n'+
 			'Normas del juego: '+'\n'+
 			'Tijera corta a papel,'+ '\n'+
