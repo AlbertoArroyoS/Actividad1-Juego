@@ -37,6 +37,8 @@ let tituloCabecera;
 //variables sonido
 let audioWin;
 let audioLose;
+let botonActivarSonido;
+let botonDesactivarSonido;
 
 
 //inicialización de las variables
@@ -101,6 +103,10 @@ function initVariables(){
 	//audio
 	audioWin = document.getElementById("audio-win");
 	audioLose = document.getElementById("audio-lose");
+	botonActivarSonido = document.getElementById("activar-sonido");
+	botonDesactivarSonido = document.getElementById("desactivar-sonido");
+	botonActivarSonido.disabled = true;
+	
 }
 
 //funciones asinar un valor a cada opcion pulsada
@@ -475,4 +481,23 @@ window.addEventListener("load",()=>{
 		tituloCabecera.style.color = "black";
 	});
 
+	//listener activar sonido
+	//audioWin = document.getElementById("audio-win");
+	//audioLose = document.getElementById("audio-lose");
+
+	botonActivarSonido.addEventListener("click",()=>{
+
+		botonActivarSonido.disabled = true;
+		botonDesactivarSonido.disabled = false ;
+		audioWin.src ="/mp3/win.mp3";
+		audioLose.src="/mp3/lose.mp3";
+	});
+
+	//listener desactivar sonido
+	botonDesactivarSonido.addEventListener("click",()=>{
+		botonActivarSonido.disabled = false;
+		botonDesactivarSonido.disabled = true;
+		audioWin.src ="/mp3/no-sonido.mp3";
+		audioLose.src="/mp3/no-sonido.mp3";
+	});
 });
