@@ -371,6 +371,9 @@ function empezarPartida(){
 	//location.reload();
 	//añado el nombre del jugador a la partida
 	document.getElementById('nombreP1').textContent = "Nombre: " + player1;
+	//Actualizar tabla con nombre del jugador
+	document.getElementById('p1-opciones').textContent = "Opciones " + player1;
+	document.getElementById('p1-tabla').textContent = player1;
 	//pongo la caja de texto vacia por si se quiere introducir otro nombre
 	document.getElementById("nombre").value='';
 	//Quito la frase de introduzca su nombre
