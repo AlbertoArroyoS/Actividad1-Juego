@@ -84,8 +84,6 @@ function initVariables(){
 	botonlagarto= document.getElementById("btnlagarto");
 	botonspock= document.getElementById("btnspock");
 
-	//variables contador				
-	resetContadores();
 
 	//Resultado texto
 	document.getElementById('resultado').textContent='Empieza a jugar';
@@ -94,8 +92,6 @@ function initVariables(){
 	document.getElementById('resultado-frase').textContent='INDRODUZCA SU NOMBRE';
 	document.getElementById('resultado-frase').style='font-size:30px'
 
-	//******Quito el borde rojo que he usado en css para guiarme
-	document.getElementById('tabla-completa').id="tabla-completa-transparente";
 
 	//titulo cabecera
 	tituloCabecera = document.getElementById('cabecera');
@@ -174,7 +170,6 @@ function resultadoPartida(numeroOpcion) {
 	resumenResultados();	
 }
 
-
 //Sumo los contadores de partidas jugadas, ganadas y perdidas
 function ganador(numero){
 
@@ -222,7 +217,6 @@ function resumenResultados(){
 	document.getElementById("puntuacion").textContent= puntuacion;
 
 }
-
 
 //Para mostrar en consola la opcion con palabras a la que corresponde el numero
 function pasarNumeroAOpcion(numero){
@@ -341,7 +335,6 @@ function activarOpciones(){
 	document.getElementById('button').disabled = false;
 }
 
-
 //funcion para resetear los contadores para un nuevo jugador
 
 function resetContadores(){
@@ -380,19 +373,10 @@ function empezarPartida(){
 	document.getElementById('resultado-frase').textContent='';
 
 }
+//funciones de los listeners
 
-//Onload con los listeners
-
-window.addEventListener("load",()=>{
-	//Añado la propiedad disabled a los botones, ya que el html no los tiene, porque quiero bloquearlos hasta que se ponga el nombre
-	desactivarOpciones();
-
-	//inicializar variables
-    initVariables();
-
-	
-
-	/* LISTENERS */
+function listeners(){
+		/* LISTENERS */
 
 	//listener para que aparezca el boton aceptar tienes que poner minimo un caracter de entrada en la caja de texto
 
@@ -503,4 +487,21 @@ window.addEventListener("load",()=>{
 		audioWin.src ="/mp3/no-sonido.mp3";
 		audioLose.src="/mp3/no-sonido.mp3";
 	});
+}
+
+//Onload con los listeners
+
+window.addEventListener("load",()=>{
+
+	//******Quito el borde rojo que he usado en css para guiarme
+	document.getElementById('tabla-completa').id="tabla-completa-transparente";
+	//Añado la propiedad disabled a los botones, ya que el html no los tiene, porque quiero bloquearlos hasta que se ponga el nombre
+	desactivarOpciones();
+	//funcion inicializar variables
+    initVariables();
+	//variables contador				
+	resetContadores();
+	//funcion listeners
+	listeners();
+
 });
