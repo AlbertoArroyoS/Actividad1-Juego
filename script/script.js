@@ -176,11 +176,9 @@ function ganador(numero){
 	switch(resultadoP1VsP2){
 		case 0: //Si hay empate
 			contadorEmpates++;
-			resultadoEscrito= '';
-			
-			
+			resultadoEscrito= '';			
 			document.getElementById('resultado-frase').style='font-size:30px'
-			document.getElementById("sheldon").src="/icon/equal.png";
+			document.getElementById("sheldon").src="icon/equal.png";
 			break; 
 		case 1: //Si gana el jugador
 			contadorGanadas++; 
@@ -200,7 +198,7 @@ function ganador(numero){
 			//sonido perdedor
 			audioLose.play();
 			//icono perder y fondo rojo al icono
-			document.getElementById("sheldon").src="/icon/perdedor.png";
+			document.getElementById("sheldon").src="icon/perdedor.png";
 			document.getElementById("p1").style.backgroundColor = "red";
 			document.getElementById("p1").style.borderRadius = "10%";
 			
@@ -249,19 +247,19 @@ function addImgP1 (valor){
 
 	switch (valor){
 		case 0:
-			document.getElementById("p1").src="/icon/rock.png";
+			document.getElementById("p1").src="icon/rock.png";
 			break;
 		case 1:
-			document.getElementById("p1").src="/icon/paper.png";
+			document.getElementById("p1").src="icon/paper.png";
 			break;
 		case 2:
-			document.getElementById("p1").src="/icon/scissors.png";
+			document.getElementById("p1").src="icon/scissors.png";
 			break;
 		case 3:
-			document.getElementById("p1").src="/icon/lizard.png";
+			document.getElementById("p1").src="icon/lizard.png";
 			break;
 		case 4:
-			document.getElementById("p1").src="/icon/spock.png";
+			document.getElementById("p1").src="icon/spock.png";
 			break;
 	}
 }
@@ -273,27 +271,27 @@ function addImgP2 (valor){
 
 	switch (valor){
 		case 0:
-			document.getElementById("p2").src="/icon/rock.png";
+			document.getElementById("p2").src="icon/rock.png";
 			document.getElementById("pcpiedra").style.backgroundColor = "rgb(41, 42, 42, 5)";
 			document.getElementById("pcpiedra").style.borderRadius = "10%";
 			break;
 		case 1:
-			document.getElementById("p2").src="/icon/paper.png";
+			document.getElementById("p2").src="icon/paper.png";
 			document.getElementById("pcpapel").style.backgroundColor = "rgb(41, 42, 42, 5)";
 			document.getElementById("pcpapel").style.borderRadius = "10%";
 			break;
 		case 2:
-			document.getElementById("p2").src="/icon/scissors.png";
+			document.getElementById("p2").src="icon/scissors.png";
 			document.getElementById("pctijeras").style.backgroundColor = "rgb(41, 42, 42, 5)";
 			document.getElementById("pctijeras").style.borderRadius = "10%";
 			break;
 		case 3:
-			document.getElementById("p2").src="/icon/lizard.png";
+			document.getElementById("p2").src="icon/lizard.png";
 			document.getElementById("pclagarto").style.backgroundColor = "rgb(41, 42, 42, 5)";
 			document.getElementById("pclagarto").style.borderRadius = "10%";
 			break;
 		case 4:
-			document.getElementById("p2").src="/icon/spock.png";
+			document.getElementById("p2").src="icon/spock.png";
 			document.getElementById("pcspock").style.backgroundColor = "rgb(41, 42, 42, 5)";
 			document.getElementById("pcspock").style.borderRadius = "10%";
 			break;
@@ -351,7 +349,7 @@ function resetContadores(){
 function empezarPartida(){
 	//reseteo los contadores,resultados y opciones seleccionadas
 	document.getElementById('resultado').textContent='Empieza a jugar';
-	document.getElementById("sheldon").src="/icon/sheldon.png";
+	document.getElementById("sheldon").src="icon/sheldon.png";
 	resetContadores();
 	resumenResultados();
 	resetFondoPc();
@@ -476,16 +474,16 @@ function listeners(){
 
 		botonActivarSonido.disabled = true;
 		botonDesactivarSonido.disabled = false ;
-		audioWin.src ="/mp3/win.mp3";
-		audioLose.src="/mp3/lose.mp3";
+		audioWin.src ="mp3/win.mp3";
+		audioLose.src="mp3/lose.mp3";
 	});
 
 	//listener desactivar sonido
 	botonDesactivarSonido.addEventListener("click",()=>{
 		botonActivarSonido.disabled = false;
 		botonDesactivarSonido.disabled = true;
-		audioWin.src ="/mp3/no-sonido.mp3";
-		audioLose.src="/mp3/no-sonido.mp3";
+		audioWin.src ="mp3/no-sonido.mp3";
+		audioLose.src="mp3/no-sonido.mp3";
 	});
 }
 
