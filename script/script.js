@@ -490,13 +490,12 @@ function listeners(){
 //Onload con los listeners
 
 window.addEventListener("load",()=>{
-
-	//******Quito el borde rojo que he usado en css para guiarme
-	document.getElementById('tabla-completa').id="tabla-completa-transparente";
-	//Añado la propiedad disabled a los botones, ya que el html no los tiene, porque quiero bloquearlos hasta que se ponga el nombre
-	desactivarOpciones();
 	//funcion inicializar variables
     initVariables();
+	//******Quito el borde azul que he usado en css para la tabla
+	document.getElementById('tabla-completa').id="tabla-completa-transparente";
+	//Añado la propiedad disabled a los botones, ya que el html no los tiene, porque quiero bloquearlos hasta que se ponga el nombre
+	desactivarOpciones();	
 	//variables contador				
 	resetContadores();
 	//funcion listeners

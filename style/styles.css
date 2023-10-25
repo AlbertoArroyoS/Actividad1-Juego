@@ -7,7 +7,7 @@ html{
 
     background-repeat: repeat-y;
     background-size: cover;
-    background-image: url(img/fondo-azul2.jpg);
+    background-image: url(../img/fondo-azul2.jpg);
 }
 
 /* Eliminar el subrayado de los enlaces */
@@ -27,7 +27,7 @@ table{
 /* Borde tablas para saber tamaño */
 
 #tabla-completa td{
-    border: red 5px solid;
+    border: rgb(160, 243, 246) 5px solid;
     text-align: center;
 }
 /* Quitar los bordes que he usado de guia para cuadrar la tabla*/
