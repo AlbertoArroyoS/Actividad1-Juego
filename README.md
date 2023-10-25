@@ -22,7 +22,7 @@ Sheldon la explicaba así: "Tijera corta a papel, papel tapa a piedra, piedra ap
 
 El jugador tendrá que poner su nombre obligatoriamente para poder jugar. 
 
-![Imagen](imgReadme\i002.png)
+![Imagen](imgReadme/i002.png)
 
 Una vez puesto el nombre y darle a aceptar, se bloquea el botón de aceptar y podrá seleccionar una opción del jugador. Se sombreará la opción al posicionar el ratón sobre las opciones del jugador, pero la jugada no será marcada hasta hacer click sobre la opción deseada
 
