@@ -7,7 +7,7 @@ html{
 
     background-repeat: repeat-y;
     background-size: cover;
-    background-image: url(/img/fondo-azul2.jpg);
+    background-image: url(img/fondo-azul2.jpg);
 }
 
 /* Eliminar el subrayado de los enlaces */

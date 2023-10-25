@@ -186,7 +186,7 @@ function ganador(numero){
 			//sonido ganador
 			audioWin.play();
 			//icono ganador y fondo amarillo al icono
-			document.getElementById("sheldon").src="/icon/win.png";
+			document.getElementById("sheldon").src="icon/win.png";
 			document.getElementById("p1").style.backgroundColor = "yellow";
 			document.getElementById("p1").style.borderRadius = "10%";
 			//style.backgroundImage = "url('tuUrl')";
