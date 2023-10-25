@@ -14,7 +14,7 @@ Enlace a la web del juego:
 https://albertoarroyos.github.io/Actividad1-Juego/
 
 
-![](imgReadme\i001.png)
+![Imagen](imgReadme/i001.png)
 
 *Normas del juego:*
 
