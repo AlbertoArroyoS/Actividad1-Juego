@@ -1,115 +1,47 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/styles.css">
-    <script type="text/javascript" src="script/script.js"></script>
-    <title>Juego Piedra, Papel, Tijeras, Lagarto, Spock</title>
+    <title>Piedra, papel, tijera, lagarto y Spock</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
 </head>
+
 <body>
-    <header id="cabecera">
-        <h1>Juego Piedra, Papel, Tijeras, Lagarto, Spock</h1>   
-    </header>
+        <div id="encabezado">
+        <span>Introduce tu nombre para iniciar el juego: </span>
+        <input type="text" id="name">
+        <button id="start">Empezar</button>
+        </div>
+        <div id="site">
+            <div class="scores">
+                <div id="computer-score">
+                    <p id="changeName">Nombre</p>
+                    <h1 id="your-score">0</h1>
+                </div>
+                <div id="my-score">
+                    <p>Ordenador</p>
+                    <h1 id="opponent-score">0</h1>
+                </div>
+            </div>
 
-<!--Introcudir el nombre del jugador -->
- 
-    <div class="cuerpo"></div>       
-        <aside>
-            <input id="nombre" type="text" name="nombre" placeholder="Introduce tu nombre" required/>
-            <br><br>
-		    <button type="button" id="button" >Aceptar</button>
-            <h1 id="nombreP1">Nombre: </h1>
-        </aside>
+            <div class="images">
+                <input id="rock" type="image" src="images/rock.png" alt="rock" />
+                <input id="paper" type="image" src="images/paper.png" alt="paper" />
+                <input id="scissor" type="image" src="images/scissor.png" alt="scissor" />
+                <input id="lizard" type="image" src="images/lizard.png" alt="lizard" />
+                <input id="spock" type="image" src="images/spock.png" alt="spock" />
+            </div>
 
-        <main>
-            <section>
-                <!--Tabla con los iconos de las opciones y les doy una equivalencia numerica para luego usar una matriz con esos valores -->
-                <article>
-                    <table id="tabla-completa">
-                        <tr>
-                            <td colspan="5">
-                                <h1 id="puntuacion">Puntuación 0/0 </h1>
-                            </td>
-                        </tr>
-                        <div>
-                            <tr>
-                                <th id ="p1-opciones">Opciones P1</th>
-                                <th id="p1-tabla">Player1</th>
-                                <th>VS</th>
-                                <th>PC</th>
-                                <th>Opciones Pc</th>    
-                            </tr>
-                        </div>
-                       
-                        <tr>
-                            <td><button id="btnpiedra" class="btn" type="button" value="0"><img class="mediana" src="icon/rock.png"/></button></td>
-                            <td rowspan="3" class="p1-vs-p2"><img id="p1" class="grande" src="icon/p1.png"/></td>
-                            <td rowspan="3"><img id="vs" class="grande" src="icon/vs.png"/></td>
-                            <td rowspan="3" ><img id="p2" class="grande" src="icon/pc.png"/></td>
-                            <td><img id="pcpiedra" class="mediana" src="icon/rock.png"/></td>                           
-                        </tr>
-                        <tr>
-                            <td><button id="btnpapel" class="btn" type="button" value="1"><img class="mediana" src="icon/paper.png"/></button></td>
-                            <td><img id="pcpapel" class="mediana" src="icon/paper.png"/></td>
-                              
-                        </tr>
-                        <tr>
-                            <td><button id="btntijera" class="btn" type="button" value="2"><img class="mediana" src="icon/scissors.png"/></button></td>
-                            <td><img id="pctijeras" class="mediana" src="icon/scissors.png"/></td>
-                        </tr>
-                        <tr>
-                            <td><button id="btnlagarto" class="btn" type="button" value="3"><img class="mediana" src="icon/lizard.png"/></button></td>
-                            <td colspan="3" rowspan="2">
-                                <img id="sheldon" class="grande2" src="icon/sheldon.png"/>
-                                <div id="resultado">
-                                    <h1>Ganaste</h1>
+            <div id="fight">
+                <img id="your-choice" src="images/rock.png">
+                <img id="opponent-choice" src="images/rock.png">
+                <p id="result">Resultado</p>
+            </div>
+        </div>
 
-                                </div>
-                                <div id="resultado-frase">
-                                    <h1>Piedra gana a papel</h1>
-
-                                </div>
-                            </td>
-                            <td><img id="pclagarto" class="mediana" src="icon/lizard.png"/></td>
-                        </tr>
-                        <tr>
-                            <td> <button id="btnspock" class="btn" type="button" value="3"><img class="mediana" src="icon/spock.png"/></button></td>
-                            
-                            <td><img id="pcspock" class="mediana" src="icon/spock.png"/></td>
-                        </tr>
-                    </table>
-                        
-                </article>
-
-            </section>        
-        </main>
-
-        </div>       
-     <!--  Pie de pagina -->
-    <footer class="pie-pagina">
-    <!--  Poner sonidos si gana o pierde -->
-
-        <audio id="audio-win" controls>
-            <source type="audio/mp3" src="mp3/win.mp3">
-        </audio>
-        <audio id="audio-lose" controls>
-                <source type="audio/mp3" src="mp3/lose.mp3">
-        </audio>
-        <audio id="audio-none" controls>
-            <source type="audio/mp3" src="mp3/no-sonido.mp3">
-        </audio>
-        <br>
-        <button type="button" id="desactivar-sonido" >Desactivar sonidos</button>
-        <button type="button" id="activar-sonido" >Activar sonidos</button>
-        <br><br><br><br>
-        <a href="https://www.flaticon.es/iconos-gratis/videojuego" title="videojuego iconos">Videojuego iconos creados por Smashicons - Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/brain" title="brain icons">Brain icons created by Smashicons - Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/winner" title="winner icons">Winner icons created by Freepik - Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/lose" title="lose icons">Lose icons created by Freepik - Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/equal" title="equal icons">Equal icons created by Mayor Icons - Flaticon</a>
-        <a href="https://www.flaticon.es/iconos-gratis/perdedor" title="perdedor iconos">Perdedor iconos creados por Freepik - Flaticon</a>
-        <a href="https://www.freepik.es/foto-gratis/fondo-azul-degradado-lujo-abstracto-azul-oscuro-liso-banner-estudio-vineta-negra_16232743.htm#query=fondos%20para%20paginas%20web&position=20&from_view=search&track=ais">Imagen de benzoix</a> en Freepik
-    </footer>    
+       <footer><button id="rules">Reglas del juego</button></footer>
+        
 </body>
 </html>
