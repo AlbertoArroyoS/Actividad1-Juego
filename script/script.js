@@ -402,8 +402,6 @@ function listeners(){
 				document.getElementById('button').disabled = false;
 			}
 		}
-		
-		
 
 	});
 
