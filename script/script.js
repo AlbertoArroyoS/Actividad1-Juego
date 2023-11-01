@@ -391,17 +391,15 @@ function listeners(){
 	//listener pata que aparezca un promt si pierdes el foco de la caja de texto sin poner el nombre
 	nombreCaja.addEventListener("blur",()=>{
 		//alert("Debe introducir un nombre")
-		if (document.getElementById("nombre").value ==''){
-			let respuesta = prompt("Debe introducir su nombre",);
-			if(respuesta == ""){
-				document.getElementById('button').disabled = true;
-				document.getElementById("nombre").value=respuesta;
-			}else{
-				document.getElementById("nombre").value=respuesta;
-				document.getElementById('button').disabled = false;
-			}
-			
+		let respuesta = prompt("Debe introducir su nombre");
+		if(respuesta == "" || respuesta == null){
+			document.getElementById('button').disabled = true;
+			document.getElementById("nombre").value="";
+		}else{
+			document.getElementById("nombre").value=respuesta;
+			document.getElementById('button').disabled = false;
 		}
+
 	});
 
 	//listener empezar partida al darle a aceptar
