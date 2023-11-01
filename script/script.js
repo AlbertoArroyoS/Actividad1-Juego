@@ -393,8 +393,14 @@ function listeners(){
 		//alert("Debe introducir un nombre")
 		if (document.getElementById("nombre").value ==''){
 			let respuesta = prompt("Debe introducir su nombre",);
-			document.getElementById("nombre").value=respuesta;
-			document.getElementById('button').disabled = false;
+			if(respuesta == ""){
+				document.getElementById('button').disabled = true;
+				document.getElementById("nombre").value=respuesta;
+			}else{
+				document.getElementById("nombre").value=respuesta;
+				document.getElementById('button').disabled = false;
+			}
+			
 		}
 	});
 
